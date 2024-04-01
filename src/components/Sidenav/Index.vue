@@ -1,0 +1,68 @@
+<template>
+    <div
+      v-show="layout === 'default'"
+      class="min-height-300 position-absolute w-100"
+      :class="{ 'bg-transparent': darkMode, 'bg-success': !darkMode }"
+    />
+    <aside
+      class="my-3 overflow-auto border-0 sidenav navbar navbar-vertical navbar-expand-xs border-radius-xl fixed-start ms-3"
+      :class="[
+        layout === 'landing' ? 'bg-transparent shadow-none' : '',
+        sidebarType
+      ]"
+      id="sidenav-main"
+    >
+      <div class="sidenav-header">
+        <i
+          class="top-0 p-3 cursor-pointer fas fa-times text-secondary opacity-5 position-absolute end-0 d-none d-xl-none"
+          aria-hidden="true"
+          id="iconSidenav"
+        ></i>
+  
+        <router-link class="m-0 navbar-brand" to="/">
+          <img
+            :src="darkMode || sidebarType === 'bg-default' ? logoWhite : logo"
+            class="navbar-brand-img h-100"
+            alt="main_logo"
+          />
+  
+          <span class="ms-2 font-weight-bold me-2">Herramientas - Tools</span>
+        </router-link>
+      </div>
+  
+      <hr class="mt-0 horizontal dark" />
+
+      <SidenavList />
+    </aside>
+  </template>
+  <script>
+  import { computed } from "vue";
+  import { useStore } from "vuex";
+  import logo from "@/assets/img/logo-ct-dark.png";
+  import logoWhite from "@/assets/img/logo-ct.png";
+  import SidenavList from '@/components/Sidenav/SidenavList.vue';
+  
+  export default {
+    components: {
+      SidenavList
+    },
+    setup() {
+      const store = useStore();
+      const layout = computed(() => store.state.layout);
+      const sidebarType = computed(() => store.state.sidebarType);
+      const darkMode = computed(() => store.state.darkMode);
+  
+      // Aquí puedes agregar más lógica si es necesario
+  
+      return {
+        logo,
+        logoWhite,
+        layout,
+        sidebarType,
+        darkMode,
+      };
+    },
+  };
+  </script>
+  
+

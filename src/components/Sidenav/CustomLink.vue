@@ -34,12 +34,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-  .is-active{
-    color: #42b983;
-  }
-  .normal-link{
-    color: #c6c5c5;
-  }
-</style>

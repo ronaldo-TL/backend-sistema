@@ -24,7 +24,7 @@
                         type="text"
                         class="form-control"
                         placeholder="Type here..."
-                        />
+                        to="/"/>
                     </div>
                 </div>
                 <ul class="navbar-nav justify-content-end">
@@ -57,43 +57,19 @@
             </div>
         </div>
 </nav>
-
-    
-  <div>
-    <CustomLink 
-        v-for="link in links"
-        :key="link.to"
-        :link="link"
-    />
-  </div>
 </template>
 
 <script>
-// import { computed } from "vue";
-// import { useStore } from "vuex";
-// import { useRoute } from "vue-router";
-// import Breadcrumbs from "../Breadcrumbs.vue";
-import { defineAsyncComponent} from 'vue'
-
-// const showMwnu = ref(false) 
-// const store = useStore()
-
-
-
 
 export default {
     data(){
         return{
-            links: [
-                {to: 'user-list', name: 'lista'},
-                {to: 'user-edit', name: 'editar'},
-                {to: 'https://google.com', name: 'google'}
-            ]
+
         }
         
     },
     components: {
-        CustomLink: defineAsyncComponent(()=>import('./CustomLink.vue'))
+
     },
     setup(){
         

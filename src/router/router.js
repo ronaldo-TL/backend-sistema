@@ -3,11 +3,11 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 const routes = [
     {
         path: '/',
-        redirect: '/list'
+        redirect: '/users/list'
     },{
         path: '/users',
         name: 'users',
-        component: ()=>import(/* webpackChunkName: "Navbar" */ '@/modules/Usuarios/layouts/UsuarioLayout.vue'),
+        component: ()=>import(/* webpackChunkName: "UsuarioLayout" */ '@/modules/Usuarios/layouts/UsuarioLayout.vue'),
         children: [
             { 
                 path: 'list', 
@@ -24,6 +24,10 @@ const routes = [
             }
         ]
 
+    },{
+        path: '/tools',
+        name: 'tools',
+        component: ()=>import(/* webpackChunkName: "ListUserPage" */ '@/modules/Usuarios/pages/ListUserPage.vue'),
     },{ 
         path: '/:pathMatch(.*)*', 
         component: ()=>import(/* webpackChunkName: "NoFountPage" */ '@/modules/shared/pages/NoFountPage.vue')
@@ -32,7 +36,8 @@ const routes = [
 
 const router = createRouter({
     history: createWebHashHistory(),
-    routes
+    routes,
+    linkActiveClass: "active",
 
 })
 
