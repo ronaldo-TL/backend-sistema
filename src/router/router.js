@@ -27,7 +27,7 @@ const routes = [
     },{
         path: '/tools',
         name: 'tools',
-        component: ()=>import(/* webpackChunkName: "ListUserPage" */ '@/modules/Usuarios/pages/ListUserPage.vue'),
+        component: ()=>import(/* webpackChunkName: "Tables" */ '@/views/Tables.vue'),
     },{ 
         path: '/:pathMatch(.*)*', 
         component: ()=>import(/* webpackChunkName: "NoFountPage" */ '@/modules/shared/pages/NoFountPage.vue')
