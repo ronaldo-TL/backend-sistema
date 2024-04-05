@@ -8,8 +8,6 @@
     class="main-content position-relative max-height-vh-100 h-100 border-radius-lg"
   >
     <!-- nav -->
-    
-
     <navbar :class="[navClasses]" v-if="showNavbar" />
 
     <router-view />
@@ -32,7 +30,8 @@ import { useStore } from "vuex";
 export default {
   name: 'App',
   components: {
-    Index: defineAsyncComponent(()=>import('@/components/Sidenav/Index.vue'))
+    Index: defineAsyncComponent(()=>import('@/components/Sidenav/Index.vue')),
+    Navbar: defineAsyncComponent(()=>import('@/components/Navbars/Navbar.vue')),
   
 
   },

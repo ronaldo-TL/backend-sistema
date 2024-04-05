@@ -2,7 +2,7 @@
     <div
       v-show="layout === 'default'"
       class="min-height-300 position-absolute w-100"
-      :class="{ 'bg-transparent': darkMode, 'bg-success': !darkMode }"
+      :class="{ 'bg-transparent': darkMode, 'bg-dark': !darkMode }"
     />
     <aside
       class="my-3 overflow-auto border-0 sidenav navbar navbar-vertical navbar-expand-xs border-radius-xl fixed-start ms-3"
@@ -25,7 +25,7 @@
             class="navbar-brand-img h-100"
             alt="main_logo"
           />
-  
+
           <span class="ms-2 font-weight-bold me-2">Herramientas - Tools</span>
         </router-link>
       </div>
